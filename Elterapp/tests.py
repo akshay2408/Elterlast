@@ -47,10 +47,10 @@ class TestNFTViewSet:
             "picture":"test.com",
             "external_link":"test.com",
             "description":"test discription",
-            "collection":collection[0],
+            "collection":collection[0].id,
             "supply":1,
             "royalties":1.0,
-            "buyer":user,
+            "buyer":user.id,
         }
         res = client.post(url, data=j, content_type='application/json')
         assert res.status_code == 200
